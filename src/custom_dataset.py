@@ -25,7 +25,7 @@ from scipy.spatial.distance import cdist
 # import networkx as nx
 import torch.nn.functional as F
 #import random
-np.warnings.filterwarnings('error', category=np.VisibleDeprecationWarning)
+#np.warnings.filterwarnings('error', category=np.VisibleDeprecationWarning)
 
 import torch
 import numpy as np
