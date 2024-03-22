@@ -2,8 +2,8 @@
 # Licensed under the MIT License.
 
 import torch
-import numpy as np
-from pympler import asizeof
+# import numpy as np
+# from pympler import asizeof
 
 def get_square_subsequent_mask(seq_len):
     mask = (torch.triu(torch.ones(seq_len, seq_len)) == 1).transpose(0, 1)
