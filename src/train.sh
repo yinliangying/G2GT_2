@@ -24,10 +24,10 @@ default_root_dir=$PWD
 mkdir -p $default_root_dir
 n_gpu=1
 export CUDA_VISIBLE_DEVICES=0
-
+#--gpus $n_gpu  --accelerator ddp \
 python entry.py --num_workers 1 --num_nodes 1 --seed $seed --batch_size $batch_size  --min_epochs 100 --accumulate_grad_batches 1  --sync_batchnorm True  --val_check_interval 1000 \
       --dataset_name $dataset_name --gradient_clip_val 4 \
-      --gpus $n_gpu  --accelerator ddp \
+
       $arch \
       --default_root_dir $default_root_dir --progress_bar_refresh_rate 10  \
 
