@@ -2,11 +2,8 @@
 # Licensed under the MIT License.
 
 #!/usr/bin/env bash
-[ -z "${arch}" ] && arch="  --ffn_dim     2048     --hidden_dim     768     --dropout_rate     0.1     --intput_
-dropout_rate     0.1     --attention_dropout_rate     0.1    --n_layer    8     --peak_lr     2.5e-4     --end_lr     1e-6
-    --head_size     24     --weight_decay     0.00     --edge_type     one_hop     --warmup_updates     1000     --tot_upda
-tes     10000     "
-#"--ffn_dim 1024 --hidden_dim 256 --dropout_rate 0.1 --intput_dropout_rate 0.1 --attention_dropout_rate 0.1 --n_layer 6 --peak_lr 2.5e-4 --end_lr 1e-6 --head_size 12 --weight_decay 0.00 --edge_type one_hop --warmup_updates 1000 --tot_updates 500000"
+[ -z "${arch}" ] && arch="  --ffn_dim     2048     --hidden_dim     768     --dropout_rate     0.1     --intput_dropout_rate     0.1     --attention_dropout_rate     0.1    --n_layer    8     --peak_lr     2.5e-4     --end_lr     1e-6  --head_size     24     --weight_decay     0.00     --edge_type     one_hop     --warmup_updates     1000     --tot_updates     10000     "
+#[ -z "${arch}" ] && arch="--ffn_dim 1024 --hidden_dim 256 --dropout_rate 0.1 --intput_dropout_rate 0.1 --attention_dropout_rate 0.1 --n_layer 6 --peak_lr 2.5e-4 --end_lr 1e-6 --head_size 12 --weight_decay 0.00 --edge_type one_hop --warmup_updates 1000 --tot_updates 500000"
 [ -z "$ckpt_name" ] && ckpt_name=last.ckpt
 
 #export CUDA_VISIBLE_DEVICES=6
