@@ -20,7 +20,7 @@ from torch.utils.data import DataLoader
 from functools import partial
 
 dataset = None
-def get_dataset(dataset_name = 'uspto',weak_ensemble=0,root=None):
+def get_dataset(dataset_name = 'uspto',weak_ensemble=0):
     ''' get dataset and its information
     Args:
         dataset_name (str, optional): dataset name. Defaults to 'uspto'.
@@ -38,7 +38,7 @@ def get_dataset(dataset_name = 'uspto',weak_ensemble=0,root=None):
         'metric': 'train_loss',
         'metric_mode': 'min',
         'evaluator': 'none',
-        'dataset': UsptoDataset(root=root,dataset=dataset_name,weak_ensemble=weak_ensemble),
+        'dataset': UsptoDataset(root="./",dataset=dataset_name,weak_ensemble=weak_ensemble),
         'max_node': 420, }
 
     print(f' > {dataset_name} loaded!')
@@ -65,7 +65,7 @@ class GraphDataModule(LightningDataModule):
         super().__init__(*args, **kwargs)
         self.dataset_name = dataset_name
         print(f' > dataset_name: {dataset_name}')
-        self.dataset = get_dataset(self.dataset_name, weak_ensemble=weak_ensemble,root=args.default_root_dir)
+        self.dataset = get_dataset(self.dataset_name, weak_ensemble=weak_ensemble)
         te, tr, va = self.dataset['dataset'].get_idx_split()
         self.dataset_test = self.dataset['dataset'][:te]
         #self.dataset_train= self.dataset_test
