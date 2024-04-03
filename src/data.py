@@ -20,7 +20,7 @@ from torch.utils.data import DataLoader
 from functools import partial
 
 dataset = None
-def get_dataset(dataset_name = 'uspto',weak_ensemble=0):
+def get_dataset(dataset_name = 'uspto',weak_ensemble=0,root=None):
     ''' get dataset and its information
     Args:
         dataset_name (str, optional): dataset name. Defaults to 'uspto'.
@@ -38,7 +38,7 @@ def get_dataset(dataset_name = 'uspto',weak_ensemble=0):
         'metric': 'train_loss',
         'metric_mode': 'min',
         'evaluator': 'none',
-        'dataset': UsptoDataset(root="/personal/Bohrium_task_g2gt_retro/",dataset=dataset_name,weak_ensemble=weak_ensemble),
+        'dataset': UsptoDataset(root=root,dataset=dataset_name,weak_ensemble=weak_ensemble),
         'max_node': 420, }
 
     print(f' > {dataset_name} loaded!')

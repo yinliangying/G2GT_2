@@ -14,7 +14,7 @@ echo "seed: ${seed}"
 echo "batch_size: ${batch_size}"
 echo "==============================================================================="
 
-default_root_dir=$PWD
+default_root_dir="./"#$PWD
 mkdir -p $default_root_dir
 n_gpu=1
 export CUDA_VISIBLE_DEVICES=0

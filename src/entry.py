@@ -141,7 +141,7 @@ def cli_main():
     # ------------
     # training
     # ------------
-    metric = 'valid_' + get_dataset(dm.dataset_name)['metric']
+    metric = 'valid_' + get_dataset(dataset_name=dm.dataset_name,root=args.default_root_dir)['metric']
     dirpath = args.default_root_dir + f'/lightning_logs/checkpoints'
     checkpoint_callback = ModelCheckpoint(
         dirpath=dirpath,

@@ -165,6 +165,7 @@ def atom_to_feature_vector(atom, peri, mol):
 import os.path as osp
 from rdkit import RDConfig
 from rdkit.Chem import ChemicalFeatures
+RDConfig.RDDataDir="/root/miniconda3/envs/G2GT/lib/python3.10/site-packages/rdkit/Data"  #当前环境找不到这个路径 20240403
 fdef_name = osp.join(RDConfig.RDDataDir, 'BaseFeatures.fdef')
 chem_feature_factory = ChemicalFeatures.BuildFeatureFactory(fdef_name)
 
