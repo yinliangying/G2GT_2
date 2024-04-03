@@ -1,5 +1,5 @@
 
-source_str=-i https://pypi.tuna.tsinghua.edu.cn/simple/
+source_str="-i https://pypi.tuna.tsinghua.edu.cn/simple/"
 pip install pytorch-lightning==1.4.5  ${source_str}
 pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html ${source_str}
 pip install networkx   ${source_str}
