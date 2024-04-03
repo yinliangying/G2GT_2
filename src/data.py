@@ -65,7 +65,7 @@ class GraphDataModule(LightningDataModule):
         super().__init__(*args, **kwargs)
         self.dataset_name = dataset_name
         print(f' > dataset_name: {dataset_name}')
-        self.dataset = get_dataset(self.dataset_name, weak_ensemble=weak_ensemble)
+        self.dataset = get_dataset(self.dataset_name, weak_ensemble=weak_ensemble,root=args.default_root_dir)
         te, tr, va = self.dataset['dataset'].get_idx_split()
         self.dataset_test = self.dataset['dataset'][:te]
         #self.dataset_train= self.dataset_test
